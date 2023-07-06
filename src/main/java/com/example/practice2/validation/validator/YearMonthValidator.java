@@ -2,8 +2,7 @@ package com.example.practice2.validation.validator;
 
 import com.example.practice2.validation.annotation.YearMonth;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
