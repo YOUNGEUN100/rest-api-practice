@@ -3,7 +3,7 @@ package com.example.practice2.validation.model.dto;
 
 import com.example.practice2.validation.annotation.YearMonth;
 // 2.0 validation
-import javax.validation.constraints.*;
+import jakarta.validation.constraints.*;
 
 public class User {
     @NotEmpty(message = "이름 필수 작성")
