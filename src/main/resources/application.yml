@@ -35,6 +35,3 @@ spring:
     livereload:
       enabled: true
 
-
-
-
