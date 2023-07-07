@@ -1,0 +1,20 @@
+server:
+  port: 8070
+
+application:
+  version: AppVersion 1.0.0
+  title: thejoeun company
+
+spring:
+  h2:
+    console:
+      enabled: true
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp
+  devtools:
+    livereload:
+      enabled: true
+
+
