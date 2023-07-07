@@ -6,9 +6,27 @@ application:
   title: thejoeun company
 
 spring:
+  datasource:
+    #    generate-unique-name: false
+    url: jdbc:h2:mem:testdb
+    #    url: jdbc:h2:tcp://localhost/~/jpashop
+    driver-class-name: org.h2.Driver
   h2:
     console:
+      path: /h2-console
       enabled: true
+  sql:
+    init:
+      mode: always
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: ture
+    properties:
+      hibernate:
+        format_sql: true
+   # generate-ddl: false
+    #hibernate:
+     # ddl-auto: create-drop
   mvc:
     view:
       prefix: /WEB-INF/view/
@@ -16,5 +34,4 @@ spring:
   devtools:
     livereload:
       enabled: true
-
 
