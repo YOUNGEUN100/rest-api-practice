@@ -5,21 +5,20 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
-
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
-public class Member {
+public class Member2 {
     @Id
-
-//  @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "id", updatable = false)
     private Long id;
-    //    @NonNull
+    @NonNull
     private String name;
     private String email;
-    private LocalDateTime createAt;
-    private LocalDateTime updateAt;
+    private String email2;
+    private String email3;
+
 }
