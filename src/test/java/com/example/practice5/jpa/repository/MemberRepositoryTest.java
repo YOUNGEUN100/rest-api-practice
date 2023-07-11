@@ -50,12 +50,12 @@ class MemberRepositoryTest {
         List<Member> memberList3 = memberRepository.findAll();
         memberList3.forEach(System.out::println);
 
-        // delete문
-//        System.out.println("delete문 --------------------------------------------------------");
-//        memberRepository.deleteAll();
-//        memberRepository.deleteAllInBatch();
-//        List<Member> memberList4 = memberRepository.findAll();
-//        memberList4.forEach(System.out::println);
+         //delete문
+        System.out.println("delete문 --------------------------------------------------------");
+        memberRepository.deleteAll();  // deleteaLL 한개씩  : 성능안좋은
+        memberRepository.deleteAllInBatch(); // delete 한번에
+        List<Member> memberList4 = memberRepository.findAll();
+        memberList4.forEach(System.out::println);
     }
 
     @Test
