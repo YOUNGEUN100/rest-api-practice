@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @Entity
 public class Member {
     @Id
+
 //  @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = true)
     private Long id;

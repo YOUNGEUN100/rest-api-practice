@@ -3,4 +3,3 @@ insert into member(`id`, `name`, `email`, `create_at`, `update_at`) values (2, '
 insert into member(`id`, `name`, `email`, `create_at`, `update_at`) values (3, '이순신', 'leesunsin@gmail.com', now(), now());
 insert into member(`id`, `name`, `email`, `create_at`, `update_at`) values (4, '강감찬', 'kangkamchan@gmail.com', now(), now());
 insert into member(`id`, `name`, `email`, `create_at`, `update_at`) values (5, '홍길동', 'ryukwansun@thejoeun.com', now(), now());
-

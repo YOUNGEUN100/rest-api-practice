@@ -10,4 +10,3 @@ public class JpaTestApplication {
         SpringApplication.run(JpaTestApplication.class, args);
     }
 }
-
