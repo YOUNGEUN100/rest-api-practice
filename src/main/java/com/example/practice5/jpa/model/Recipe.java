@@ -1,11 +1,9 @@
 package com.example.practice5.jpa.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Builder
 @NoArgsConstructor
@@ -16,13 +14,26 @@ import java.util.Date;
 public class Recipe {
     @Id
     private Long recipeNo;
+
+    @NonNull
     private String recipeName;
-    private String time;
+
+
+    private String cookTime;
+
     private String difficulty;
+
     private int recipeHits;
+
     private String deleteYn;
+
     private String hashtag;
+
+    @Column(updatable = false)
     private LocalDateTime cdatetime;
+
+    @Column(insertable = false)
     private LocalDateTime udatetime;
 
 }
+

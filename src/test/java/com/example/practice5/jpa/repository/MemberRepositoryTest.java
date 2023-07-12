@@ -1,6 +1,7 @@
 package com.example.practice5.jpa.repository;
 
 import com.example.practice5.jpa.model.Member;
+import com.example.practice5.jpa.model.enums.Nation;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -45,17 +46,23 @@ class MemberRepositoryTest {
 
         // update문
         System.out.println("update문 --------------------------------------------------------");
-        Member member1 = new Member(1L, "홍길동", "이메일 주소", LocalDateTime.now(), LocalDateTime.now());
+        Member member1 = Member.builder()
+                                    .id(1L)
+                                    .name("홍길동")
+                                    .email("이메일 주소")
+                                    .createAt(LocalDateTime.now())
+                                    .updateAt(LocalDateTime.now())
+                                    .build();
         memberRepository.save(member1);     // 1번을 가진 id가 있다면 update, 없으면 create문 발생
-        List<Member> memberList3 = memberRepository.findAll();
-        memberList3.forEach(System.out::println);
+//        List<Member> memberList3 = memberRepository.findAll();
+//        memberList3.forEach(System.out::println);
 
          //delete문
-        System.out.println("delete문 --------------------------------------------------------");
-        memberRepository.deleteAll();  // deleteaLL 한개씩  : 성능안좋은
-        memberRepository.deleteAllInBatch(); // delete 한번에
-        List<Member> memberList4 = memberRepository.findAll();
-        memberList4.forEach(System.out::println);
+//        System.out.println("delete문 --------------------------------------------------------");
+//        memberRepository.deleteAll();  // deleteaLL 한개씩  : 성능안좋은
+//        memberRepository.deleteAllInBatch(); // delete 한번에
+//        List<Member> memberList4 = memberRepository.findAll();
+//        memberList4.forEach(System.out::println);
     }
 
     @Test
@@ -134,10 +141,35 @@ class MemberRepositoryTest {
 
     }
 
-    @DisplayName("semiProject sqlmapper관련 xml sql코드를 jpa 자바코드로 변환 테스트")
+    @DisplayName("테스트 코드")
     @Test
-    void crudSemiSqlMapper() {
+    void crudTest() throws InterruptedException {
+        Member member = Member.builder()
+                .id(10L)
+                .name("김철수")
+                .email("kimchulsu@naver.com")
+                .createAt(LocalDateTime.now())
+                .build();
+        memberRepository.saveAndFlush(member);
 
+        Thread.sleep(5000);
+
+        member.setName("최영희");
+        member.setUpdateAt(LocalDateTime.now());
+        memberRepository.saveAndFlush(member);
+    }
+
+    @Test
+    void tableTest() {
+        Member member = Member.builder()
+                .id(11L)
+                .name("김민지")
+                .email("minji@naver.com")
+                .createAt(LocalDateTime.now())
+                .nation(Nation.JAPAN)
+                .male(false)
+                .build();
+        memberRepository.saveAndFlush(member);
     }
 
 
