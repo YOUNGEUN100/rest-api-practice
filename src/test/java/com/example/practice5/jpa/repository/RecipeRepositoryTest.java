@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -21,7 +20,7 @@ public class RecipeRepositoryTest {
         Recipe recipe1 = Recipe.builder()
                         .recipeNo(1L)
                         .recipeName("김치전")
-                        .time("20분")
+                        .cookTime("20분")
                         .difficulty("보통")
                         .cdatetime(LocalDateTime.now())
                         .build();
@@ -29,7 +28,7 @@ public class RecipeRepositoryTest {
         Recipe recipe2 = Recipe.builder()
                 .recipeNo(2L)
                 .recipeName("감자전")
-                .time("30분")
+                .cookTime("30분")
                 .difficulty("보통")
                 .cdatetime(LocalDateTime.now())
                 .build();
@@ -37,7 +36,7 @@ public class RecipeRepositoryTest {
         Recipe recipe3 = Recipe.builder()
                 .recipeNo(3L)
                 .recipeName("부추전")
-                .time("35분")
+                .cookTime("35분")
                 .difficulty("어려움")
                 .cdatetime(LocalDateTime.now())
                 .build();
