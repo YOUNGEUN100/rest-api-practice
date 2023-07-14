@@ -62,13 +62,13 @@ spring:
       enabled: true
 
 #logging.level:
-logging:
-  level:
-    org:
-      hibernate:
-        orm:
-          jdbc:
-            bind: trace
+#logging:
+#  level:
+#    org:
+#      hibernate:
+#        orm:
+#          jdbc:
+#            bind: trace
 #      hibernate: trace
 #    root: trace
 
