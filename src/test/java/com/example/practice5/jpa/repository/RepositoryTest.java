@@ -1,6 +1,8 @@
 package com.example.practice5.jpa.repository;
 
+import com.example.practice5.jpa.model.Address;
 import com.example.practice5.jpa.model.Board;
+import com.example.practice5.jpa.model.Book;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -15,10 +17,11 @@ public class RepositoryTest {
     @Autowired
     private BoardRepository boardRepository;
 
-    @BeforeEach
-    void setUp() {
+    @Autowired
+    private BookRepository bookRepository;
 
-    }
+    @Autowired
+    private AddressRepository addressRepository;
 
     @DisplayName("Jpa 테스트")
     @Test
@@ -32,6 +35,29 @@ public class RepositoryTest {
         boardList.forEach(System.out::println);
     }
 
+    @DisplayName("book Table 테스트")
+    @Test
+    void bookRepositoryTest() throws InterruptedException {
+        Book book = Book.builder()
+                .title("어린왕자")
+//                .author("생떽지베리")
+                .build();
+        Book book2 = bookRepository.save(book);
 
+        Thread.sleep(5000);
+//        book2.setAuthor("작가미상");
+        bookRepository.save(book2);
+    }
+
+
+
+    @DisplayName("address Table 테스트")
+    @Test
+    void addressRepositoryTest() {
+        Address address = Address.builder()
+                .zipcode("123-456")
+                .build();
+        addressRepository.save(address);
+    }
 
 }

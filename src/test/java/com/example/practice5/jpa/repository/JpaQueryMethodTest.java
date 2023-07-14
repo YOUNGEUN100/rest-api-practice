@@ -40,113 +40,113 @@ public class JpaQueryMethodTest {
 //        System.out.println("streamByName: " + memberRepository.streamByName("이순신"));
 
 
-        Optional<Member> memberOpt1 = memberRepository.findByCreateAt(LocalDateTime.MAX);
-        System.out.println(memberOpt1);
-
+//        Optional<Member> memberOpt1 = memberRepository.findByCreateAt(LocalDateTime.MAX);
+//        System.out.println(memberOpt1);
+//
 
     }
 
-    @Test
-    void jpaQueryMethodTest2() {
-        boolean isNameMember = memberRepository.existsByName("이순신");
-        if (isNameMember)
-            System.out.println("회원 이름이 존재합니다.");
+//    @Test
+//    void jpaQueryMethodTest2() {
+//        boolean isNameMember = memberRepository.existsByName("이순신");
+//        if (isNameMember)
+//            System.out.println("회원 이름이 존재합니다.");
+//
+//        boolean isEmailMember = memberRepository.existsByEmail("leesunsin@gmail.com");
+//        if (isEmailMember)
+//            System.out.println("회원 이메일이 존재합니다.");
+//
+//        Integer cntNameMember = memberRepository.countByName("홍길동");
+//        System.out.println("cntNameMember: " + cntNameMember);
+//
+//        // topNumber, firstNumber, lastNumber
+//        memberRepository.findTop1ByEmail("namsun@thejoeun.com").forEach(System.out::println);
+//        memberRepository.findFirst1ByEmail("namsun@thejoeun.com").forEach(System.out::println);
+//        memberRepository.findTop2ByEmail("namsun@thejoeun.com").forEach(System.out::println);
+//
+//        memberRepository.findDistinctByEmail("namsun@thejoeun.com").forEach(System.out::println);
+//    }
 
-        boolean isEmailMember = memberRepository.existsByEmail("leesunsin@gmail.com");
-        if (isEmailMember)
-            System.out.println("회원 이메일이 존재합니다.");
+//    @Test
+//    void jpaQueryMethodTest3() {
+//        List<Member> memberList = memberRepository.findByNameAndEmail("홍길동","mars@thejoeun.com");
+//        memberList.forEach(System.out::println);
+//
+//        List<Member> memberList2 = memberRepository.findByNameOrEmail("홍길동","mars@thejoeun.com");
+//        memberList2.forEach(System.out::println);
+//
+//        List<Member> memberList3 = memberRepository.findByCreateAtAfter(LocalDateTime.now().minusDays(1L));
+//        memberList3.forEach(s -> System.out.println(s));
+//    }
 
-        Integer cntNameMember = memberRepository.countByName("홍길동");
-        System.out.println("cntNameMember: " + cntNameMember);
+//    @Test
+//    void jpaQueryMethodTest4() {
+//        System.out.println("1. CreateAt + After----------------------------");
+//        // CreateAt + After
+//        List<Member> memberList1 = memberRepository.findByCreateAtAfter(LocalDateTime.now().minusDays(1L));
+//        memberList1.forEach(s -> System.out.println(s));
+//
+//        System.out.println("2. CreateAt + IsAfter----------------------------");
+//        // CreateAt + IsAfter
+//        List<Member> memberList2 = memberRepository.findByCreateAtIsAfter(LocalDateTime.now().minusDays(1L));
+//        memberList2.forEach(s -> System.out.println(s));
+//
+//        System.out.println("3. CreateAt + GreaterThan----------------------------");
+//        // CreateAt + GreaterThan
+//        List<Member> memberList3 = memberRepository.findByCreateAtGreaterThan(LocalDateTime.now().minusDays(1L));
+//        memberList3.forEach(s -> System.out.println(s));
+//
+//        System.out.println("4. CreateAt + GreaterThanEqual----------------------------");
+//        // CreateAt + GreaterThanEqual
+//        List<Member> memberList4 = memberRepository.findByCreateAtGreaterThanEqual(LocalDateTime.now().minusDays(1L));
+//        memberList4.forEach(s -> System.out.println(s));
+//
+//        System.out.println("5. GreaterThanEqual----------------------------");
+//        // GreaterThanEqual
+//        List<Member> memberList5 = memberRepository.findByIdGreaterThanEqual(3L);
+//        memberList5.forEach(s -> System.out.println(s));
+//
+//        System.out.println("6. CreateAt + Between----------------------------");
+//        // CreateAt + Between
+//        List<Member> memberList6 = memberRepository.findByCreateAtBetween(LocalDateTime.now().minusDays(1L), LocalDateTime.now().plusDays(1L));
+//        memberList6.forEach(s -> System.out.println(s));
+//    }
 
-        // topNumber, firstNumber, lastNumber
-        memberRepository.findTop1ByEmail("namsun@thejoeun.com").forEach(System.out::println);
-        memberRepository.findFirst1ByEmail("namsun@thejoeun.com").forEach(System.out::println);
-        memberRepository.findTop2ByEmail("namsun@thejoeun.com").forEach(System.out::println);
+//    @Test
+//    void jpaQueryMethodTest5() {
+//        List<Member> memberList7 = memberRepository.findByNameLike("%홍%");
+//        memberList7.forEach(s -> System.out.println(s));
+//
+//        List<Member> memberList8 = memberRepository.findByNameIn(Lists.newArrayList("홍길동", "강감찬"));
+//        memberList8.forEach(s -> System.out.println(s));
+//
+//        System.out.println("contains----------------");
+//        List<Member> memberList1 = memberRepository.findByNameContains("이");
+//        memberList1.forEach(s -> System.out.println(s));
+//
+//        System.out.println("startingWith----------------");
+//        List<Member> memberList2 = memberRepository.findByNameStartingWith("이");
+//        memberList2.forEach(s -> System.out.println(s));
+//
+//        System.out.println("EndingWith----------------");
+//        List<Member> memberList3 = memberRepository.findByNameEndingWith("동");
+//        memberList3.forEach(s -> System.out.println(s));
+//
+//        System.out.println("IsNotEmpty----------------");
+//        List<Member> memberList11 = memberRepository.findByAddressIsNotEmpty();
+//        memberList11.forEach(s -> System.out.println(s));
+//
+////        List<Member> memberList12 = memberRepository.findByMaleIsFalse();
+////        memberList12.forEach(s -> System.out.println(s));
+//    }
 
-        memberRepository.findDistinctByEmail("namsun@thejoeun.com").forEach(System.out::println);
-    }
-
-    @Test
-    void jpaQueryMethodTest3() {
-        List<Member> memberList = memberRepository.findByNameAndEmail("홍길동","mars@thejoeun.com");
-        memberList.forEach(System.out::println);
-
-        List<Member> memberList2 = memberRepository.findByNameOrEmail("홍길동","mars@thejoeun.com");
-        memberList2.forEach(System.out::println);
-
-        List<Member> memberList3 = memberRepository.findByCreateAtAfter(LocalDateTime.now().minusDays(1L));
-        memberList3.forEach(s -> System.out.println(s));
-    }
-
-    @Test
-    void jpaQueryMethodTest4() {
-        System.out.println("1. CreateAt + After----------------------------");
-        // CreateAt + After
-        List<Member> memberList1 = memberRepository.findByCreateAtAfter(LocalDateTime.now().minusDays(1L));
-        memberList1.forEach(s -> System.out.println(s));
-
-        System.out.println("2. CreateAt + IsAfter----------------------------");
-        // CreateAt + IsAfter
-        List<Member> memberList2 = memberRepository.findByCreateAtIsAfter(LocalDateTime.now().minusDays(1L));
-        memberList2.forEach(s -> System.out.println(s));
-
-        System.out.println("3. CreateAt + GreaterThan----------------------------");
-        // CreateAt + GreaterThan
-        List<Member> memberList3 = memberRepository.findByCreateAtGreaterThan(LocalDateTime.now().minusDays(1L));
-        memberList3.forEach(s -> System.out.println(s));
-
-        System.out.println("4. CreateAt + GreaterThanEqual----------------------------");
-        // CreateAt + GreaterThanEqual
-        List<Member> memberList4 = memberRepository.findByCreateAtGreaterThanEqual(LocalDateTime.now().minusDays(1L));
-        memberList4.forEach(s -> System.out.println(s));
-
-        System.out.println("5. GreaterThanEqual----------------------------");
-        // GreaterThanEqual
-        List<Member> memberList5 = memberRepository.findByIdGreaterThanEqual(3L);
-        memberList5.forEach(s -> System.out.println(s));
-
-        System.out.println("6. CreateAt + Between----------------------------");
-        // CreateAt + Between
-        List<Member> memberList6 = memberRepository.findByCreateAtBetween(LocalDateTime.now().minusDays(1L), LocalDateTime.now().plusDays(1L));
-        memberList6.forEach(s -> System.out.println(s));
-    }
-
-    @Test
-    void jpaQueryMethodTest5() {
-        List<Member> memberList7 = memberRepository.findByNameLike("%홍%");
-        memberList7.forEach(s -> System.out.println(s));
-
-        List<Member> memberList8 = memberRepository.findByNameIn(Lists.newArrayList("홍길동", "강감찬"));
-        memberList8.forEach(s -> System.out.println(s));
-
-        System.out.println("contains----------------");
-        List<Member> memberList1 = memberRepository.findByNameContains("이");
-        memberList1.forEach(s -> System.out.println(s));
-
-        System.out.println("startingWith----------------");
-        List<Member> memberList2 = memberRepository.findByNameStartingWith("이");
-        memberList2.forEach(s -> System.out.println(s));
-
-        System.out.println("EndingWith----------------");
-        List<Member> memberList3 = memberRepository.findByNameEndingWith("동");
-        memberList3.forEach(s -> System.out.println(s));
-
-        System.out.println("IsNotEmpty----------------");
-        List<Member> memberList11 = memberRepository.findByAddressIsNotEmpty();
-        memberList11.forEach(s -> System.out.println(s));
-
-//        List<Member> memberList12 = memberRepository.findByMaleIsFalse();
-//        memberList12.forEach(s -> System.out.println(s));
-    }
-
-    @Test
-    void jpaQueryMethodTest6() {
-        System.out.println("page-----------------");
-        Page<Member> pageMember = memberRepository.findByName("홍길동", PageRequest.of(0, 3, Sort.by(Sort.Order.desc("id"), Sort.Order.asc("name"))));
-        List<Member> memberList = pageMember.getContent();
-        memberList.forEach(System.out::println);
-    }
+//    @Test
+//    void jpaQueryMethodTest6() {
+//        System.out.println("page-----------------");
+//        Page<Member> pageMember = memberRepository.findByName("홍길동", PageRequest.of(0, 3, Sort.by(Sort.Order.desc("id"), Sort.Order.asc("name"))));
+//        List<Member> memberList = pageMember.getContent();
+//        memberList.forEach(System.out::println);
+//    }
 
 
 }
