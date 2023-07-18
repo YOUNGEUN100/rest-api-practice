@@ -17,10 +17,10 @@ import java.time.LocalDateTime;
 @MappedSuperclass
 @EntityListeners(value = AuditingEntityListener.class)
 public class BaseEntity implements TimeAuditable{
-    @Column(updatable = false)
+    @Column(nullable = false, updatable = false)
     @CreatedDate
     private LocalDateTime createAt;
-    @Column(insertable = false)
+    @Column(nullable = false, insertable = false)
     @LastModifiedDate
     private LocalDateTime updateAt;
     @CreatedBy

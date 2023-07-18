@@ -23,6 +23,6 @@ public class Publisher extends BaseEntity {
     @JoinColumn(name = "publisher_id")
     private List<Book> books;
 
-    @ManyToOne
-    private List<Author> authors;
+//    @ManyToOne
+//    private List<Author> authors;
 }

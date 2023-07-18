@@ -30,10 +30,10 @@ public class Recipe {
     private String hashtag;
 
     @Column(updatable = false)
-    private LocalDateTime cdatetime;
+    private LocalDateTime createAt;
 
     @Column(insertable = false)
-    private LocalDateTime udatetime;
+    private LocalDateTime updateAt;
 
 }
 

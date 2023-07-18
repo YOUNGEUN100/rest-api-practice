@@ -17,33 +17,40 @@ public class RecipeRepositoryTest {
     @DisplayName("recipe select all 문")
     @Test
     void selectAllRecipe() {
-        Recipe recipe1 = Recipe.builder()
-                        .recipeNo(1L)
-                        .recipeName("김치전")
-                        .cookTime("20분")
-                        .difficulty("보통")
-                        .cdatetime(LocalDateTime.now())
-                        .build();
-        recipeRepository.save(recipe1);
-        Recipe recipe2 = Recipe.builder()
-                .recipeNo(2L)
-                .recipeName("감자전")
-                .cookTime("30분")
-                .difficulty("보통")
-                .cdatetime(LocalDateTime.now())
-                .build();
-        recipeRepository.save(recipe2);
-        Recipe recipe3 = Recipe.builder()
-                .recipeNo(3L)
-                .recipeName("부추전")
-                .cookTime("35분")
-                .difficulty("어려움")
-                .cdatetime(LocalDateTime.now())
-                .build();
-        recipeRepository.save(recipe3);
+//        Recipe recipe1 = Recipe.builder()
+//                        .recipeNo(1L)
+//                        .recipeName("김치전")
+//                        .cookTime("20분")
+//                        .difficulty("보통")
+////                        .c(LocalDateTime.now())
+//                        .build();
+//        recipeRepository.save(recipe1);
+//        Recipe recipe2 = Recipe.builder()
+//                .recipeNo(2L)
+//                .recipeName("감자전")
+//                .cookTime("30분")
+//                .difficulty("보통")
+//                .cdatetime(LocalDateTime.now())
+//                .build();
+//        recipeRepository.save(recipe2);
+//        Recipe recipe3 = Recipe.builder()
+//                .recipeNo(3L)
+//                .recipeName("부추전")
+//                .cookTime("35분")
+//                .difficulty("어려움")
+//                .cdatetime(LocalDateTime.now())
+//                .build();
+//        recipeRepository.save(recipe3);
+//
+//        System.out.println("select all문---------------------------------------------");
+//        List<Recipe> recipeList = recipeRepository.findAll();
+//        recipeList.forEach(System.out::println);
+    }
 
-        System.out.println("select all문---------------------------------------------");
-        List<Recipe> recipeList = recipeRepository.findAll();
+    @DisplayName("쿼리 테스트")
+    @Test
+    void queryTest1() {
+        List<Recipe> recipeList = recipeRepository.findByIdByMyRecipe(1L);
         recipeList.forEach(System.out::println);
     }
 }
