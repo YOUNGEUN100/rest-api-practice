@@ -19,17 +19,16 @@ public class Author extends BaseEntity{
     private String name;
 
 
-//    @ManyToMany
-//    @ToString.Exclude
-//    private List<Book> books;
+    @ManyToMany
+    @ToString.Exclude
+    private List<Book> books;
 
 //    @OneToMany
 //    @JoinColumn
 //    private List<AuthorAndBook> authorAndBookList;
 
-    @OneToMany
-    @JoinColumn
-    private List<Publisher> publisherList;
+//    @OneToMany
+//    private List<Publisher> publisherList;
 
 
 }

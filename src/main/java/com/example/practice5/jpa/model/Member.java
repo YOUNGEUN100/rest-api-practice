@@ -44,7 +44,7 @@ public class Member extends BaseEntity{
     @ToString.Exclude
     private List<MemberLogHistory> memberLogHistories;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "member_id")
     @ToString.Exclude
     private List<Review> reviews;
